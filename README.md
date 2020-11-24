@@ -8,7 +8,7 @@
 
 # SYSCTL
 
-    ansible-playbook -i /root/okd-local-install/inventory.cfg        /objects-install/master-config/sysctl.yaml
+    ansible-playbook -i /root/okd-local-install/inventory.cfg objects-install/master-config/sysctl.yaml
 
 # configuration flags
 
