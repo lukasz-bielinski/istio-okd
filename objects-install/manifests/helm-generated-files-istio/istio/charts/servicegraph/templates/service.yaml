@@ -1,0 +1,23 @@
+---
+# Source: istio/charts/servicegraph/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicegraph
+  namespace: istio-system
+  annotations:
+  labels:
+    app: servicegraph
+    chart: servicegraph
+    heritage: Tiller
+    release: istio
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8088
+      targetPort: 8088
+      protocol: TCP
+      name: http
+  selector:
+    app: servicegraph
+  

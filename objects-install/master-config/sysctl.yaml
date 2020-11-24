@@ -1,0 +1,11 @@
+---
+
+- name: set sysctl
+  gather_facts: false
+  hosts: all
+  tasks:
+
+    - sysctl:
+        name: vm.max_map_count
+        value: 262144
+        state: present
