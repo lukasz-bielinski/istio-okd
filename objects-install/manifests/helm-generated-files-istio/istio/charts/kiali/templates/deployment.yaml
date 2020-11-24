@@ -31,7 +31,7 @@ spec:
     spec:
       serviceAccountName: kiali-service-account
       containers:
-      - image: "localregistry.io/kiali/kiali:v0.16"
+      - image: "docker.io/kiali/kiali:v0.16"
         name: kiali
         command:
         - "/opt/kiali/kiali"

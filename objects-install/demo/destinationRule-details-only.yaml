@@ -1,10 +1,10 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: reviews
-  namespace: istio-system
+  name: bookinfo
+  namespace: bookinfo
 spec:
-  host: "reviews.bookinfo.svc.cluster.local"
+  host: "details.bookinfo.svc.cluster.local"
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL

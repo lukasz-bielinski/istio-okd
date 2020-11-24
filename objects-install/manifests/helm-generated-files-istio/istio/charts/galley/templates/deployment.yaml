@@ -31,7 +31,7 @@ spec:
       serviceAccountName: istio-galley-service-account
       containers:
         - name: galley
-          image: "localregistry.io/istio/galley:1.1.17"
+          image: "docker.io/istio/galley:1.1.17"
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 443

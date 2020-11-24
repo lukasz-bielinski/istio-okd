@@ -36,7 +36,7 @@ spec:
       serviceAccountName: istio-pilot-service-account
       containers:
         - name: discovery
-          image: "localregistry.io/istio/pilot:1.1.17"
+          image: "docker.io/istio/pilot:1.1.17"
           imagePullPolicy: IfNotPresent
           args:
           - "discovery"
@@ -87,7 +87,7 @@ spec:
             mountPath: /etc/certs
             readOnly: true
         - name: istio-proxy
-          image: "localregistry.io/istio/proxyv2:1.1.17"
+          image: "docker.io/istio/proxyv2:1.1.17"
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 15003

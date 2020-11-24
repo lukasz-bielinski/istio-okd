@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: details-istio-mtls
+  name: bookinfo
   namespace: bookinfo
 spec:
   host: '*.bookinfo.svc.cluster.local'

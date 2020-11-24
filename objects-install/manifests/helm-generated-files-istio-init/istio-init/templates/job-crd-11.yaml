@@ -14,7 +14,7 @@ spec:
       serviceAccountName: istio-init-service-account
       containers:
       - name: istio-init-crd-11
-        image: "localregistry.io/istio/kubectl:1.1.17"
+        image: "docker.io/istio/kubectl:1.1.17"
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - name: crd-11

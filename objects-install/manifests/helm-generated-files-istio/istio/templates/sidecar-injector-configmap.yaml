@@ -20,7 +20,7 @@ data:
       initContainers:
       [[ if ne (annotation .ObjectMeta `sidecar.istio.io/interceptionMode` .ProxyConfig.InterceptionMode) "NONE" ]]
       - name: istio-init
-        image: "localregistry.io/istio/proxy_init:1.1.17"
+        image: "docker.io/istio/proxy_init:1.1.17"
         args:
         - "-p"
         - [[ .MeshConfig.ProxyListenPort ]]
@@ -59,7 +59,7 @@ data:
       [[ end -]]
       containers:
       - name: istio-proxy
-        image: [[ annotation .ObjectMeta `sidecar.istio.io/proxyImage`  "localregistry.io/istio/proxyv2:1.1.17"  ]]
+        image: [[ annotation .ObjectMeta `sidecar.istio.io/proxyImage`  "docker.io/istio/proxyv2:1.1.17"  ]]
         ports:
         - containerPort: 15090
           protocol: TCP

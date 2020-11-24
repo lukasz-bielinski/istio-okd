@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: servicegraph
-          image: "localregistry.io/istio/servicegraph:1.1.17"
+          image: "docker.io/istio/servicegraph:1.1.17"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8088

@@ -1,3 +1,6 @@
+# SCC is important!
+    to get sidecar istio-init running we need to grant privileged scc to the default sa in application ns!
+    
 # access bookinfo app
 k -n bookinfo port-forward svc/productpage 9080:9080
 

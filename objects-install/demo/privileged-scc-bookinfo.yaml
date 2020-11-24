@@ -1,0 +1,47 @@
+allowHostDirVolumePlugin: true
+allowHostIPC: true
+allowHostNetwork: true
+allowHostPID: true
+allowHostPorts: true
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: true
+allowedCapabilities:
+- '*'
+allowedUnsafeSysctls:
+- '*'
+apiVersion: security.openshift.io/v1
+defaultAddCapabilities: null
+fsGroup:
+  type: RunAsAny
+groups:
+- system:cluster-admins
+- system:nodes
+- system:masters
+- system:serviceaccounts:bookinfo
+kind: SecurityContextConstraints
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"allowHostDirVolumePlugin":true,"allowHostIPC":true,"allowHostNetwork":true,"allowHostPID":true,"allowHostPorts":true,"allowPrivilegeEscalation":true,"allowPrivilegedContainer":true,"allowedCapabilities":["*"],"allowedUnsafeSysctls":["*"],"apiVersion":"security.openshift.io/v1","defaultAddCapabilities":[],"fsGroup":{"type":"RunAsAny"},"groups":["system:cluster-admins","system:nodes","system:masters"],"kind":"SecurityContextConstraints","metadata":{"annotations":{"kubernetes.io/description":"privileged allows access to all privileged and host features and the ability to run as any user, any group, any fsGroup, and with any SELinux context.  WARNING: this is the most relaxed SCC and should be used only for cluster administration. Grant with caution."},"name":"privileged-bookinfo","namespace":""},"readOnlyRootFilesystem":false,"requiredDropCapabilities":[],"runAsUser":{"type":"RunAsAny"},"seLinuxContext":{"type":"RunAsAny"},"seccompProfiles":["*"],"supplementalGroups":{"type":"RunAsAny"},"users":["system:serviceaccount:bookinfo:default"],"volumes":["*"]}
+    kubernetes.io/description: 'privileged allows access to all privileged and host
+      features and the ability to run as any user, any group, any fsGroup, and with
+      any SELinux context.  WARNING: this is the most relaxed SCC and should be used
+      only for cluster administration. Grant with caution.'
+  creationTimestamp: null
+  name: privileged-bookinfo
+  selfLink: /apis/security.openshift.io/v1/securitycontextconstraints/privileged-bookinfo
+priority: null
+readOnlyRootFilesystem: false
+requiredDropCapabilities: null
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: RunAsAny
+seccompProfiles:
+- '*'
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:bookinfo:default
+volumes:
+- '*'

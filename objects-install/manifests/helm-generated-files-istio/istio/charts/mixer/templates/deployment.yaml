@@ -80,7 +80,7 @@ spec:
                 - s390x      
       containers:
       - name: mixer
-        image: "localregistry.io/istio/mixer:1.1.17"
+        image: "docker.io/istio/mixer:1.1.17"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 15014
@@ -116,7 +116,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       - name: istio-proxy
-        image: "localregistry.io/istio/proxyv2:1.1.17"
+        image: "docker.io/istio/proxyv2:1.1.17"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9091
@@ -248,7 +248,7 @@ spec:
                 - s390x      
       containers:
       - name: mixer
-        image: "localregistry.io/istio/mixer:1.1.17"
+        image: "docker.io/istio/mixer:1.1.17"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 15014
@@ -298,7 +298,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
       - name: istio-proxy
-        image: "localregistry.io/istio/proxyv2:1.1.17"
+        image: "docker.io/istio/proxyv2:1.1.17"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9091

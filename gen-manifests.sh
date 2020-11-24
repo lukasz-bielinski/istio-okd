@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 GRAFANA_IMAGE="grafana/grafana:6.0.2"
 DOCKER_REPO_UPSTREAM="docker.io"
-DOCKER_REPO_LOCAL="localregistry.io"
+DOCKER_REPO_LOCAL=${1:-docker.io}
 HELM="helm2"
 ISTIO_INIT_MANIFESTS="objects-install/manifests/helm-generated-files-istio-init"
 ISTIO_MANIFESTS="objects-install/manifests/helm-generated-files-istio"

@@ -31,7 +31,7 @@ spec:
       serviceAccountName: istio-sidecar-injector-service-account
       containers:
         - name: sidecar-injector-webhook
-          image: "localregistry.io/istio/sidecar_injector:1.1.17"
+          image: "docker.io/istio/sidecar_injector:1.1.17"
           imagePullPolicy: IfNotPresent
           args:
             - --caCertFile=/etc/istio/certs/root-cert.pem

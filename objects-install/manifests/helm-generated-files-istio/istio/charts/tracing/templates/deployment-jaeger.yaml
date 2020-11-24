@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: jaeger
-          image: "localregistry.io/jaegertracing/all-in-one:1.9"
+          image: "docker.io/jaegertracing/all-in-one:1.9"
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9411
