@@ -1,51 +1,55 @@
-# allowHostDirVolumePlugin: false
-# allowHostIPC: false
-# allowHostNetwork: false
-# allowHostPID: false
-# allowHostPorts: false
-# allowPrivilegeEscalation: true
-# allowPrivilegedContainer: false
-# allowedCapabilities: []
-# apiVersion: security.openshift.io/v1
-# defaultAddCapabilities: []
-# fsGroup:
-#   type: RunAsAny
-# groups:
-# - system:cluster-admins
-# kind: SecurityContextConstraints
-# metadata:
-#   annotations:
-#     kubernetes.io/description: anyuid provides all features of the restricted SCC
-#       but allows users to run with any UID and any GID.
-#   name: anyuid-bookinfo
-# priority: 10
-# readOnlyRootFilesystem: false
-# requiredDropCapabilities:
-# - MKNOD
-# runAsUser:
-#   type: RunAsAny
-# seLinuxContext:
-#   type: MustRunAs
-# supplementalGroups:
-#   type: RunAsAny
-# users:
-# - system:serviceaccount:bookinfo:istio-ingress-service-account
-# - system:serviceaccount:bookinfo:default
-# - system:serviceaccount:bookinfo:prometheus
-# - system:serviceaccount:bookinfo:istio-egressgateway-service-account
-# - system:serviceaccount:bookinfo:istio-citadel-service-account
-# - system:serviceaccount:bookinfo:istio-ingressgateway-service-account
-# - system:serviceaccount:bookinfo:istio-cleanup-old-ca-service-account
-# - system:serviceaccount:bookinfo:istio-mixer-post-install-account
-# - system:serviceaccount:bookinfo:istio-mixer-service-account
-# - system:serviceaccount:bookinfo:istio-pilot-service-account
-# - system:serviceaccount:bookinfo:istio-sidecar-injector-service-account
-# - system:serviceaccount:bookinfo:istio-galley-service-account
-# - system:serviceaccount:bookinfo:istio-security-post-install-account
-# volumes:
-# - configMap
-# - downwardAPI
-# - emptyDir
-# - persistentVolumeClaim
-# - projected
-# - secret
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: false
+allowedCapabilities: null
+apiVersion: security.openshift.io/v1
+defaultAddCapabilities: null
+fsGroup:
+  type: RunAsAny
+groups:
+- system:cluster-admins
+kind: SecurityContextConstraints
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"allowHostDirVolumePlugin":false,"allowHostIPC":false,"allowHostNetwork":false,"allowHostPID":false,"allowHostPorts":false,"allowPrivilegeEscalation":true,"allowPrivilegedContainer":false,"allowedCapabilities":[],"apiVersion":"security.openshift.io/v1","defaultAddCapabilities":[],"fsGroup":{"type":"RunAsAny"},"groups":["system:cluster-admins"],"kind":"SecurityContextConstraints","metadata":{"annotations":{"kubernetes.io/description":"anyuid provides all features of the restricted SCC but allows users to run with any UID and any GID."},"creationTimestamp":null,"name":"anyuid-istio"},"priority":10,"readOnlyRootFilesystem":false,"requiredDropCapabilities":["MKNOD"],"runAsUser":{"type":"RunAsAny"},"seLinuxContext":{"type":"MustRunAs"},"supplementalGroups":{"type":"RunAsAny"},"users":["system:serviceaccount:istio-system:istio-ingress-service-account","system:serviceaccount:istio-system:default","system:serviceaccount:istio-system:prometheus","system:serviceaccount:istio-system:istio-egressgateway-service-account","system:serviceaccount:istio-system:istio-citadel-service-account","system:serviceaccount:istio-system:istio-ingressgateway-service-account","system:serviceaccount:istio-system:istio-cleanup-old-ca-service-account","system:serviceaccount:istio-system:istio-mixer-post-install-account","system:serviceaccount:istio-system:istio-mixer-service-account","system:serviceaccount:istio-system:istio-pilot-service-account","system:serviceaccount:istio-system:istio-sidecar-injector-service-account","system:serviceaccount:istio-system:istio-galley-service-account","system:serviceaccount:istio-system:istio-security-post-install-account"],"volumes":["configMap","downwardAPI","emptyDir","persistentVolumeClaim","projected","secret"]}
+    kubernetes.io/description: anyuid provides all features of the restricted SCC
+      but allows users to run with any UID and any GID.
+  creationTimestamp: null
+  name: anyuid-istio
+  selfLink: /apis/security.openshift.io/v1/securitycontextconstraints/anyuid-istio
+priority: 10
+readOnlyRootFilesystem: false
+requiredDropCapabilities:
+- MKNOD
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: MustRunAs
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:istio-system:istio-ingress-service-account
+- system:serviceaccount:istio-system:default
+- system:serviceaccount:istio-system:prometheus
+- system:serviceaccount:istio-system:istio-egressgateway-service-account
+- system:serviceaccount:istio-system:istio-citadel-service-account
+- system:serviceaccount:istio-system:istio-ingressgateway-service-account
+- system:serviceaccount:istio-system:istio-cleanup-old-ca-service-account
+- system:serviceaccount:istio-system:istio-mixer-post-install-account
+- system:serviceaccount:istio-system:istio-mixer-service-account
+- system:serviceaccount:istio-system:istio-pilot-service-account
+- system:serviceaccount:istio-system:istio-sidecar-injector-service-account
+- system:serviceaccount:istio-system:istio-galley-service-account
+- system:serviceaccount:istio-system:istio-security-post-install-account
+volumes:
+- configMap
+- downwardAPI
+- emptyDir
+- persistentVolumeClaim
+- projected
+- secret
