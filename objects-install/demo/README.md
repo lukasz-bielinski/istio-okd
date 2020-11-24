@@ -1,8 +1,8 @@
 # SCC is important!
     to get sidecar istio-init running we need to grant privileged scc to the default sa in application ns!
-    
+
 # access bookinfo app
-k -n bookinfo port-forward svc/productpage 9080:9080
+    kubectl -n bookinfo port-forward svc/productpage 9080:9080
 
 # service graph
     kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=servicegraph -o jsonpath='{.items[0].metadata.name}') 8088:8088 &  
