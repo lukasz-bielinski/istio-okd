@@ -34,3 +34,7 @@
     istio/charts/gateways/templates/role.yaml
 ## rolebinding
     istio/charts/gateways/templates/rolebindings.yaml
+
+# Limitations
+Only istio-init can be used due to old version of CNI plugin https://github.com/openshift/origin/pull/22375
+Due to usage of istio-init priviled scc must be used in ns of application
