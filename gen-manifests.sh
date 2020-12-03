@@ -3,6 +3,7 @@ GRAFANA_IMAGE="grafana/grafana:6.0.2"
 DOCKER_REPO_UPSTREAM="docker.io"
 DOCKER_REPO_LOCAL=${1:-docker.io}
 HELM="helm2"
+HELM_ANNOTATIONS_STRING="helm.sh"
 ISTIO_INIT_MANIFESTS="objects-install/manifests/helm-generated-files-istio-init"
 ISTIO_MANIFESTS="objects-install/manifests/helm-generated-files-istio"
 FIXED_CHARTS="objects-install/manifests/fixed-charts"
@@ -39,3 +40,7 @@ grep -rl $GRAFANA_IMAGE $ISTIO_MANIFESTS | xargs sed -i 's@'"$GRAFANA_IMAGE"'@'"
 
 grep -rl $DOCKER_REPO_UPSTREAM $ISTIO_INIT_MANIFESTS | xargs sed -i 's@'"$DOCKER_REPO_UPSTREAM"'@'"$DOCKER_REPO_LOCAL"'@'
 grep -rl $DOCKER_REPO_UPSTREAM $ISTIO_MANIFESTS | xargs sed -i 's@'"$DOCKER_REPO_UPSTREAM"'@'"$DOCKER_REPO_LOCAL"'@'
+
+# delete annotations about helm
+grep -rl $HELM_ANNOTATIONS_STRING $ISTIO_INIT_MANIFESTS | xargs sed -i '/'"$HELM_ANNOTATIONS_STRING"'/d'
+grep -rl $HELM_ANNOTATIONS_STRING $ISTIO_MANIFESTS | xargs sed -i '/'"$HELM_ANNOTATIONS_STRING"'/d'

@@ -49,8 +49,6 @@ metadata:
   name: istio-grafana-post-install-1.1.17
   namespace: istio-system
   annotations:
-    "helm.sh/hook": post-install
-    "helm.sh/hook-delete-policy": hook-succeeded
   labels:
     app: grafana
     chart: grafana
