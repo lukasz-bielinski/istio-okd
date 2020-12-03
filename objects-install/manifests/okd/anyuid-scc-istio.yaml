@@ -5,9 +5,9 @@ allowHostPID: false
 allowHostPorts: false
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: false
-allowedCapabilities: null
+allowedCapabilities: []
 apiVersion: security.openshift.io/v1
-defaultAddCapabilities: null
+defaultAddCapabilities: []
 fsGroup:
   type: RunAsAny
 groups:
@@ -17,7 +17,7 @@ metadata:
   annotations:
     kubernetes.io/description: anyuid provides all features of the restricted SCC
       but allows users to run with any UID and any GID.
-    argocd.argoproj.io/sync-options: Validate=false  
+    argocd.argoproj.io/sync-options: Validate=false
   name: anyuid-istio
 priority: 10
 readOnlyRootFilesystem: false

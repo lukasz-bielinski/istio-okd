@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd objects-install/manifests || true
+cd manifests || true
 
 kubectl apply -f istio-system-ns.yaml
 kubectl apply -R -f okd/
